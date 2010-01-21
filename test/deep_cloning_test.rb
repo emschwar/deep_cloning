@@ -18,6 +18,22 @@ context "Deep Cloning" do
     @jack.save
   end
 
+  context "setting the :previous_version_attr" do
+    setup do
+      @jack.clone(:include => :mateys,
+                  :previous_version_attr => :parent)
+    end
+
+    should "set the :previous_version_attr to the thing being cloned" do
+      topic.parent == @jack
+    end
+
+    should "set the :previous_version_attr on all included associations" do
+      topic.mateys.map(&:parent).to_set ==
+        @jack.mateys.to_set
+    end
+  end
+
   context "excluding a single attribute" do
     setup do
       @jack.clone(:except => :name)

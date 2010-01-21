@@ -27,7 +27,12 @@ module DeepCloning
   #
   # ==== Cloning really deep with multiple associations
   #   pirate.clone :include => [:mateys, {:treasures => :gold_pieces}]
-  # 
+  #
+  # ==== Cloning and setting attribute to point to previous version
+  #   other = pirate.clone :include => { :treasures => :gold_pieces },
+  #                        :previous_version_attr => :parent
+  #   other.parent # => pirate
+  #   other.treasures.first.parent # => pirate.treasures.first
   def clone_with_deep_cloning options = {}
     kopy = clone_without_deep_cloning
     
@@ -36,14 +41,19 @@ module DeepCloning
         kopy.write_attribute(attribute, attributes_from_column_definition[attribute.to_s])
       end
     end
-    
+
+    if kopy.respond_to?("#{options[:previous_version_attr]}=")
+      kopy.send("#{options[:previous_version_attr]}=", self)
+    end
+
     if options[:include]
       Array(options[:include]).each do |association, deep_associations|
         if (association.kind_of? Hash)
           deep_associations = association[association.keys.first]
           association = association.keys.first
         end
-        opts = deep_associations.blank? ? {} : {:include => deep_associations}
+        opts = options.except(:include)
+        opts.merge!({:include => deep_associations}) unless deep_associations.blank?
         cloned_object = case self.class.reflect_on_association(association).macro
                         when :belongs_to, :has_one
                           self.send(association) && self.send(association).clone(opts)
@@ -57,3 +67,4 @@ module DeepCloning
     return kopy
   end
 end
+ActiveRecord::Base.instance_eval { include DeepCloning }
