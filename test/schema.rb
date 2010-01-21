@@ -1,6 +1,7 @@
 ActiveRecord::Schema.define(:version => 1) do
   create_table :pirates, :force => true do |t|
     t.column :name, :string
+    t.column :parent_id, :integer
     t.column :nick_name, :string, :default => 'no nickname'
     t.column :age, :string
   end
@@ -12,6 +13,7 @@ ActiveRecord::Schema.define(:version => 1) do
   
   create_table :mateys, :force => true do |t|
     t.column :name, :string
+    t.column :parent_id, :integer
     t.column :pirate_id, :integer
   end
   

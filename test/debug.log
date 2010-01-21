@@ -1,0 +1,957 @@
+# Logfile created on Thu Jan 21 13:01:13 -0600 2010 by logger.rb
+  [4;36;1mSQL (0.5ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "pirates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "parent_id" integer, "nick_name" varchar(255) DEFAULT 'no nickname', "age" varchar(255)) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "parrots" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pirate_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "mateys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "parent_id" integer, "pirate_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "treasures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "found_at" varchar(255), "pirate_id" integer) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "gold_pieces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "treasure_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('1')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "pirates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "parent_id" integer, "nick_name" varchar(255) DEFAULT 'no nickname', "age" varchar(255)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE TABLE "parrots" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pirate_id" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "mateys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "parent_id" integer, "pirate_id" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE TABLE "treasures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "found_at" varchar(255), "pirate_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE TABLE "gold_pieces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "treasure_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('1')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "pirates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "parent_id" integer, "nick_name" varchar(255) DEFAULT 'no nickname', "age" varchar(255)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "parrots" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pirate_id" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE TABLE "mateys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "parent_id" integer, "pirate_id" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "treasures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "found_at" varchar(255), "pirate_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE TABLE "gold_pieces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "treasure_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('1')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "pirates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "parent_id" integer, "nick_name" varchar(255) DEFAULT 'no nickname', "age" varchar(255)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE TABLE "parrots" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pirate_id" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE TABLE "mateys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "parent_id" integer, "pirate_id" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "treasures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "found_at" varchar(255), "pirate_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE TABLE "gold_pieces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "treasure_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('1')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "pirates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "parent_id" integer, "nick_name" varchar(255) DEFAULT 'no nickname', "age" varchar(255)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "parrots" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pirate_id" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE TABLE "mateys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "parent_id" integer, "pirate_id" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "treasures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "found_at" varchar(255), "pirate_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE TABLE "gold_pieces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "treasure_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('1')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "pirates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "parent_id" integer, "nick_name" varchar(255) DEFAULT 'no nickname', "age" varchar(255)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "parrots" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pirate_id" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE TABLE "mateys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "parent_id" integer, "pirate_id" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "treasures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "found_at" varchar(255), "pirate_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "gold_pieces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "treasure_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('1')[0m
+  [4;35;1mPirate Create (0.2ms)[0m   [0mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;36;1mMatey Create (0.2ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 1, NULL)[0m
+  [4;35;1mTreasure Create (0.2ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 1)[0m
+  [4;36;1mGoldPiece Create (0.2ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(1)[0m
+  [4;35;1mParrot Create (0.2ms)[0m   [0mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 1)[0m
+  [4;36;1mPirate Create (0.3ms)[0m   [0;1mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;35;1mMatey Create (0.2ms)[0m   [0mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 2, NULL)[0m
+  [4;36;1mTreasure Create (0.2ms)[0m   [0;1mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 2)[0m
+  [4;35;1mGoldPiece Create (0.1ms)[0m   [0mINSERT INTO "gold_pieces" ("treasure_id") VALUES(2)[0m
+  [4;36;1mParrot Create (0.1ms)[0m   [0;1mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 2)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "pirates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "parent_id" integer, "nick_name" varchar(255) DEFAULT 'no nickname', "age" varchar(255)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "parrots" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pirate_id" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "mateys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "parent_id" integer, "pirate_id" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE TABLE "treasures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "found_at" varchar(255), "pirate_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE TABLE "gold_pieces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "treasure_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('1')[0m
+  [4;35;1mPirate Create (0.1ms)[0m   [0mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;36;1mMatey Create (0.1ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 1, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 1)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(1)[0m
+  [4;35;1mParrot Create (0.1ms)[0m   [0mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 1)[0m
+  [4;36;1mPirate Create (0.1ms)[0m   [0;1mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;35;1mMatey Create (0.1ms)[0m   [0mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 2, NULL)[0m
+  [4;36;1mTreasure Create (0.1ms)[0m   [0;1mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 2)[0m
+  [4;35;1mGoldPiece Create (0.1ms)[0m   [0mINSERT INTO "gold_pieces" ("treasure_id") VALUES(2)[0m
+  [4;36;1mParrot Create (0.1ms)[0m   [0;1mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 2)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "pirates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "parent_id" integer, "nick_name" varchar(255) DEFAULT 'no nickname', "age" varchar(255)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "parrots" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pirate_id" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "mateys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "parent_id" integer, "pirate_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "treasures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "found_at" varchar(255), "pirate_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "gold_pieces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "treasure_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('1')[0m
+  [4;35;1mPirate Create (0.1ms)[0m   [0mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;36;1mMatey Create (0.1ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 1, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 1)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(1)[0m
+  [4;35;1mParrot Create (0.1ms)[0m   [0mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 1)[0m
+  [4;36;1mPirate Create (0.1ms)[0m   [0;1mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;35;1mMatey Create (0.1ms)[0m   [0mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 2, NULL)[0m
+  [4;36;1mTreasure Create (0.1ms)[0m   [0;1mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 2)[0m
+  [4;35;1mGoldPiece Create (0.1ms)[0m   [0mINSERT INTO "gold_pieces" ("treasure_id") VALUES(2)[0m
+  [4;36;1mParrot Create (0.1ms)[0m   [0;1mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 2)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "pirates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "parent_id" integer, "nick_name" varchar(255) DEFAULT 'no nickname', "age" varchar(255)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "parrots" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pirate_id" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "mateys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "parent_id" integer, "pirate_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "treasures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "found_at" varchar(255), "pirate_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "gold_pieces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "treasure_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('1')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "pirates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "parent_id" integer, "nick_name" varchar(255) DEFAULT 'no nickname', "age" varchar(255)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "parrots" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pirate_id" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE TABLE "mateys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "parent_id" integer, "pirate_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE TABLE "treasures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "found_at" varchar(255), "pirate_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE TABLE "gold_pieces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "treasure_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('1')[0m
+  [4;35;1mPirate Create (0.1ms)[0m   [0mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;36;1mMatey Create (0.1ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 1, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 1)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(1)[0m
+  [4;35;1mParrot Create (0.1ms)[0m   [0mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 1)[0m
+  [4;36;1mPirate Create (0.1ms)[0m   [0;1mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;35;1mMatey Create (0.1ms)[0m   [0mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 2, NULL)[0m
+  [4;36;1mTreasure Create (0.1ms)[0m   [0;1mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 2)[0m
+  [4;35;1mGoldPiece Create (0.1ms)[0m   [0mINSERT INTO "gold_pieces" ("treasure_id") VALUES(2)[0m
+  [4;36;1mParrot Create (0.1ms)[0m   [0;1mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 2)[0m
+  [4;35;1mPirate Create (0.1ms)[0m   [0mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;36;1mMatey Create (0.1ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 3, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 3)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(3)[0m
+  [4;35;1mParrot Create (0.1ms)[0m   [0mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 3)[0m
+  [4;36;1mPirate Create (0.1ms)[0m   [0;1mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;35;1mMatey Create (0.1ms)[0m   [0mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 4, NULL)[0m
+  [4;36;1mTreasure Create (0.1ms)[0m   [0;1mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 4)[0m
+  [4;35;1mGoldPiece Create (0.1ms)[0m   [0mINSERT INTO "gold_pieces" ("treasure_id") VALUES(4)[0m
+  [4;36;1mParrot Create (0.1ms)[0m   [0;1mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 4)[0m
+  [4;35;1mPirate Create (0.1ms)[0m   [0mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;36;1mMatey Create (0.1ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 5, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 5)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(5)[0m
+  [4;35;1mParrot Create (0.1ms)[0m   [0mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 5)[0m
+  [4;36;1mPirate Create (0.1ms)[0m   [0;1mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;35;1mMatey Create (0.1ms)[0m   [0mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 6, NULL)[0m
+  [4;36;1mTreasure Create (0.1ms)[0m   [0;1mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 6)[0m
+  [4;35;1mGoldPiece Create (0.1ms)[0m   [0mINSERT INTO "gold_pieces" ("treasure_id") VALUES(6)[0m
+  [4;36;1mParrot Create (0.1ms)[0m   [0;1mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 6)[0m
+  [4;35;1mPirate Create (0.1ms)[0m   [0mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;36;1mMatey Create (0.1ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 7, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 7)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(7)[0m
+  [4;35;1mParrot Create (0.1ms)[0m   [0mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 7)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "gold_pieces" INNER JOIN "treasures" ON "gold_pieces".treasure_id = "treasures".id WHERE (("treasures".pirate_id = NULL)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "gold_pieces" INNER JOIN "treasures" ON "gold_pieces".treasure_id = "treasures".id WHERE (("treasures".pirate_id = 7)) [0m
+  [4;36;1mPirate Create (0.1ms)[0m   [0;1mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;35;1mMatey Create (0.1ms)[0m   [0mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 8, NULL)[0m
+  [4;36;1mTreasure Create (0.1ms)[0m   [0;1mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 8)[0m
+  [4;35;1mGoldPiece Create (0.1ms)[0m   [0mINSERT INTO "gold_pieces" ("treasure_id") VALUES(8)[0m
+  [4;36;1mParrot Create (0.1ms)[0m   [0;1mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 8)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "gold_pieces" INNER JOIN "treasures" ON "gold_pieces".treasure_id = "treasures".id WHERE (("treasures".pirate_id = NULL)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "gold_pieces" INNER JOIN "treasures" ON "gold_pieces".treasure_id = "treasures".id WHERE (("treasures".pirate_id = 8)) [0m
+  [4;35;1mPirate Create (0.1ms)[0m   [0mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;36;1mMatey Create (0.1ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 9, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 9)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(9)[0m
+  [4;35;1mParrot Create (0.1ms)[0m   [0mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 9)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "gold_pieces" INNER JOIN "treasures" ON "gold_pieces".treasure_id = "treasures".id WHERE (("treasures".pirate_id = NULL)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "gold_pieces" INNER JOIN "treasures" ON "gold_pieces".treasure_id = "treasures".id WHERE (("treasures".pirate_id = 9)) [0m
+  [4;36;1mPirate Create (0.1ms)[0m   [0;1mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;35;1mMatey Create (0.1ms)[0m   [0mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 10, NULL)[0m
+  [4;36;1mTreasure Create (0.1ms)[0m   [0;1mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 10)[0m
+  [4;35;1mGoldPiece Create (0.1ms)[0m   [0mINSERT INTO "gold_pieces" ("treasure_id") VALUES(10)[0m
+  [4;36;1mParrot Create (0.1ms)[0m   [0;1mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 10)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "pirates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "parent_id" integer, "nick_name" varchar(255) DEFAULT 'no nickname', "age" varchar(255)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "parrots" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pirate_id" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "mateys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "parent_id" integer, "pirate_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "treasures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "found_at" varchar(255), "pirate_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "gold_pieces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "treasure_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('1')[0m
+  [4;35;1mPirate Create (0.1ms)[0m   [0mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;36;1mMatey Create (0.1ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 1, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 1)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(1)[0m
+  [4;35;1mParrot Create (0.1ms)[0m   [0mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 1)[0m
+  [4;36;1mPirate Create (0.1ms)[0m   [0;1mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;35;1mMatey Create (0.1ms)[0m   [0mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 2, NULL)[0m
+  [4;36;1mTreasure Create (0.1ms)[0m   [0;1mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 2)[0m
+  [4;35;1mGoldPiece Create (0.1ms)[0m   [0mINSERT INTO "gold_pieces" ("treasure_id") VALUES(2)[0m
+  [4;36;1mParrot Create (0.1ms)[0m   [0;1mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 2)[0m
+  [4;35;1mPirate Create (0.1ms)[0m   [0mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;36;1mMatey Create (0.1ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 3, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 3)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(3)[0m
+  [4;35;1mParrot Create (0.1ms)[0m   [0mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 3)[0m
+  [4;36;1mPirate Create (0.1ms)[0m   [0;1mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;35;1mMatey Create (0.1ms)[0m   [0mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 4, NULL)[0m
+  [4;36;1mTreasure Create (0.1ms)[0m   [0;1mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 4)[0m
+  [4;35;1mGoldPiece Create (0.1ms)[0m   [0mINSERT INTO "gold_pieces" ("treasure_id") VALUES(4)[0m
+  [4;36;1mParrot Create (0.1ms)[0m   [0;1mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 4)[0m
+  [4;35;1mPirate Create (0.1ms)[0m   [0mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;36;1mMatey Create (0.1ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 5, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 5)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(5)[0m
+  [4;35;1mParrot Create (0.1ms)[0m   [0mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 5)[0m
+  [4;36;1mPirate Create (0.1ms)[0m   [0;1mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;35;1mMatey Create (0.1ms)[0m   [0mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 6, NULL)[0m
+  [4;36;1mTreasure Create (0.1ms)[0m   [0;1mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 6)[0m
+  [4;35;1mGoldPiece Create (0.1ms)[0m   [0mINSERT INTO "gold_pieces" ("treasure_id") VALUES(6)[0m
+  [4;36;1mParrot Create (0.1ms)[0m   [0;1mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 6)[0m
+  [4;35;1mPirate Create (0.1ms)[0m   [0mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;36;1mMatey Create (0.1ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 7, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 7)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(7)[0m
+  [4;35;1mParrot Create (0.1ms)[0m   [0mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 7)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "gold_pieces" INNER JOIN "treasures" ON "gold_pieces".treasure_id = "treasures".id WHERE (("treasures".pirate_id = 7)) [0m
+  [4;35;1mPirate Create (0.2ms)[0m   [0mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;36;1mMatey Create (0.1ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 8, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 8)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(8)[0m
+  [4;35;1mParrot Create (0.1ms)[0m   [0mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 8)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "gold_pieces" INNER JOIN "treasures" ON "gold_pieces".treasure_id = "treasures".id WHERE (("treasures".pirate_id = NULL)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "gold_pieces" INNER JOIN "treasures" ON "gold_pieces".treasure_id = "treasures".id WHERE (("treasures".pirate_id = 8)) [0m
+  [4;36;1mPirate Create (0.1ms)[0m   [0;1mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;35;1mMatey Create (0.1ms)[0m   [0mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 9, NULL)[0m
+  [4;36;1mTreasure Create (0.1ms)[0m   [0;1mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 9)[0m
+  [4;35;1mGoldPiece Create (0.1ms)[0m   [0mINSERT INTO "gold_pieces" ("treasure_id") VALUES(9)[0m
+  [4;36;1mParrot Create (0.1ms)[0m   [0;1mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 9)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "gold_pieces" INNER JOIN "treasures" ON "gold_pieces".treasure_id = "treasures".id WHERE (("treasures".pirate_id = NULL)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "gold_pieces" INNER JOIN "treasures" ON "gold_pieces".treasure_id = "treasures".id WHERE (("treasures".pirate_id = 9)) [0m
+  [4;35;1mPirate Create (0.1ms)[0m   [0mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;36;1mMatey Create (0.1ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 10, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 10)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(10)[0m
+  [4;35;1mParrot Create (0.1ms)[0m   [0mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 10)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "pirates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "parent_id" integer, "nick_name" varchar(255) DEFAULT 'no nickname', "age" varchar(255)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "parrots" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pirate_id" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "mateys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "parent_id" integer, "pirate_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE TABLE "treasures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "found_at" varchar(255), "pirate_id" integer) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "gold_pieces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "treasure_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('1')[0m
+  [4;35;1mPirate Create (0.1ms)[0m   [0mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;36;1mMatey Create (0.1ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 1, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 1)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(1)[0m
+  [4;35;1mParrot Create (0.1ms)[0m   [0mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 1)[0m
+  [4;36;1mPirate Create (0.1ms)[0m   [0;1mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;35;1mMatey Create (0.1ms)[0m   [0mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 2, NULL)[0m
+  [4;36;1mTreasure Create (0.1ms)[0m   [0;1mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 2)[0m
+  [4;35;1mGoldPiece Create (0.1ms)[0m   [0mINSERT INTO "gold_pieces" ("treasure_id") VALUES(2)[0m
+  [4;36;1mParrot Create (0.1ms)[0m   [0;1mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 2)[0m
+  [4;35;1mPirate Create (0.1ms)[0m   [0mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;36;1mMatey Create (0.1ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 3, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 3)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(3)[0m
+  [4;35;1mParrot Create (0.1ms)[0m   [0mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 3)[0m
+  [4;36;1mPirate Create (0.1ms)[0m   [0;1mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;35;1mMatey Create (0.1ms)[0m   [0mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 4, NULL)[0m
+  [4;36;1mTreasure Create (0.1ms)[0m   [0;1mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 4)[0m
+  [4;35;1mGoldPiece Create (0.1ms)[0m   [0mINSERT INTO "gold_pieces" ("treasure_id") VALUES(4)[0m
+  [4;36;1mParrot Create (0.1ms)[0m   [0;1mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 4)[0m
+  [4;35;1mPirate Create (0.1ms)[0m   [0mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;36;1mMatey Create (0.1ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 5, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 5)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(5)[0m
+  [4;35;1mParrot Create (0.1ms)[0m   [0mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 5)[0m
+  [4;36;1mPirate Create (0.1ms)[0m   [0;1mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;35;1mMatey Create (0.1ms)[0m   [0mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 6, NULL)[0m
+  [4;36;1mTreasure Create (0.1ms)[0m   [0;1mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 6)[0m
+  [4;35;1mGoldPiece Create (0.1ms)[0m   [0mINSERT INTO "gold_pieces" ("treasure_id") VALUES(6)[0m
+  [4;36;1mParrot Create (0.1ms)[0m   [0;1mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 6)[0m
+  [4;35;1mPirate Create (0.1ms)[0m   [0mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;36;1mMatey Create (0.1ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 7, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 7)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(7)[0m
+  [4;35;1mParrot Create (0.1ms)[0m   [0mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 7)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "pirates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "parent_id" integer, "nick_name" varchar(255) DEFAULT 'no nickname', "age" varchar(255)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "parrots" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pirate_id" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE TABLE "mateys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "parent_id" integer, "pirate_id" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE TABLE "treasures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "found_at" varchar(255), "pirate_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE TABLE "gold_pieces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "treasure_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('1')[0m
+  [4;35;1mPirate Create (0.1ms)[0m   [0mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;36;1mMatey Create (0.1ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 1, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 1)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(1)[0m
+  [4;35;1mParrot Create (0.1ms)[0m   [0mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 1)[0m
+  [4;36;1mPirate Create (0.1ms)[0m   [0;1mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;35;1mMatey Create (0.1ms)[0m   [0mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 2, NULL)[0m
+  [4;36;1mTreasure Create (0.1ms)[0m   [0;1mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 2)[0m
+  [4;35;1mGoldPiece Create (0.1ms)[0m   [0mINSERT INTO "gold_pieces" ("treasure_id") VALUES(2)[0m
+  [4;36;1mParrot Create (0.1ms)[0m   [0;1mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 2)[0m
+  [4;35;1mPirate Create (0.1ms)[0m   [0mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;36;1mMatey Create (0.1ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 3, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 3)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(3)[0m
+  [4;35;1mParrot Create (0.1ms)[0m   [0mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 3)[0m
+  [4;36;1mPirate Create (0.1ms)[0m   [0;1mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;35;1mMatey Create (0.1ms)[0m   [0mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 4, NULL)[0m
+  [4;36;1mTreasure Create (0.1ms)[0m   [0;1mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 4)[0m
+  [4;35;1mGoldPiece Create (0.1ms)[0m   [0mINSERT INTO "gold_pieces" ("treasure_id") VALUES(4)[0m
+  [4;36;1mParrot Create (0.1ms)[0m   [0;1mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 4)[0m
+  [4;35;1mPirate Create (0.1ms)[0m   [0mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;36;1mMatey Create (0.1ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 5, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 5)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(5)[0m
+  [4;35;1mParrot Create (0.1ms)[0m   [0mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 5)[0m
+  [4;36;1mPirate Create (0.1ms)[0m   [0;1mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;35;1mMatey Create (0.1ms)[0m   [0mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 6, NULL)[0m
+  [4;36;1mTreasure Create (0.1ms)[0m   [0;1mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 6)[0m
+  [4;35;1mGoldPiece Create (0.1ms)[0m   [0mINSERT INTO "gold_pieces" ("treasure_id") VALUES(6)[0m
+  [4;36;1mParrot Create (0.1ms)[0m   [0;1mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 6)[0m
+  [4;35;1mPirate Create (0.1ms)[0m   [0mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;36;1mMatey Create (0.1ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 7, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 7)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(7)[0m
+  [4;35;1mParrot Create (0.1ms)[0m   [0mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 7)[0m
+  [4;36;1mGoldPiece Load (0.5ms)[0m   [0;1mSELECT "gold_pieces".* FROM "gold_pieces" INNER JOIN "treasures" ON "gold_pieces".treasure_id = "treasures".id WHERE (("treasures".pirate_id = 7)) [0m
+  [4;35;1mPirate Create (0.5ms)[0m   [0mINSERT INTO "pirates" ("name", "nick_name", "parent_id", "age") VALUES('Jack Sparrow', 'Captain Jack', NULL, NULL)[0m
+  [4;36;1mTreasure Create (0.2ms)[0m   [0;1mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 8)[0m
+  [4;35;1mGoldPiece Create (0.3ms)[0m   [0mINSERT INTO "gold_pieces" ("treasure_id") VALUES(8)[0m
+  [4;36;1mPirate Load (0.2ms)[0m   [0;1mSELECT * FROM "pirates" WHERE ("pirates"."id" = 8) [0m
+  [4;35;1mGoldPiece Load (0.5ms)[0m   [0mSELECT "gold_pieces".* FROM "gold_pieces" INNER JOIN "treasures" ON "gold_pieces".treasure_id = "treasures".id WHERE (("treasures".pirate_id = 8)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "pirates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "parent_id" integer, "nick_name" varchar(255) DEFAULT 'no nickname', "age" varchar(255)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "parrots" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pirate_id" integer) [0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "mateys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "parent_id" integer, "pirate_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "treasures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "found_at" varchar(255), "pirate_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "gold_pieces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "treasure_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('1')[0m
+  [4;35;1mPirate Create (0.1ms)[0m   [0mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;36;1mMatey Create (0.1ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 1, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 1)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(1)[0m
+  [4;35;1mParrot Create (0.1ms)[0m   [0mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 1)[0m
+  [4;36;1mPirate Create (0.1ms)[0m   [0;1mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;35;1mMatey Create (0.1ms)[0m   [0mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 2, NULL)[0m
+  [4;36;1mTreasure Create (0.1ms)[0m   [0;1mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 2)[0m
+  [4;35;1mGoldPiece Create (0.1ms)[0m   [0mINSERT INTO "gold_pieces" ("treasure_id") VALUES(2)[0m
+  [4;36;1mParrot Create (0.1ms)[0m   [0;1mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 2)[0m
+  [4;35;1mPirate Create (0.1ms)[0m   [0mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;36;1mMatey Create (0.1ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 3, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 3)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(3)[0m
+  [4;35;1mParrot Create (0.1ms)[0m   [0mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 3)[0m
+  [4;36;1mPirate Create (0.1ms)[0m   [0;1mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;35;1mMatey Create (0.1ms)[0m   [0mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 4, NULL)[0m
+  [4;36;1mTreasure Create (0.1ms)[0m   [0;1mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 4)[0m
+  [4;35;1mGoldPiece Create (0.1ms)[0m   [0mINSERT INTO "gold_pieces" ("treasure_id") VALUES(4)[0m
+  [4;36;1mParrot Create (0.1ms)[0m   [0;1mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 4)[0m
+  [4;35;1mPirate Create (0.1ms)[0m   [0mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;36;1mMatey Create (0.1ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 5, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 5)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(5)[0m
+  [4;35;1mParrot Create (0.1ms)[0m   [0mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 5)[0m
+  [4;36;1mPirate Create (0.1ms)[0m   [0;1mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;35;1mMatey Create (0.1ms)[0m   [0mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 6, NULL)[0m
+  [4;36;1mTreasure Create (0.1ms)[0m   [0;1mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 6)[0m
+  [4;35;1mGoldPiece Create (0.1ms)[0m   [0mINSERT INTO "gold_pieces" ("treasure_id") VALUES(6)[0m
+  [4;36;1mParrot Create (0.1ms)[0m   [0;1mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 6)[0m
+  [4;35;1mPirate Create (0.1ms)[0m   [0mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;36;1mMatey Create (0.1ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 7, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 7)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(7)[0m
+  [4;35;1mParrot Create (0.1ms)[0m   [0mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 7)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "gold_pieces" INNER JOIN "treasures" ON "gold_pieces".treasure_id = "treasures".id WHERE (("treasures".pirate_id = NULL)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "gold_pieces" INNER JOIN "treasures" ON "gold_pieces".treasure_id = "treasures".id WHERE (("treasures".pirate_id = 7)) [0m
+  [4;36;1mPirate Create (0.1ms)[0m   [0;1mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;35;1mMatey Create (0.1ms)[0m   [0mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 8, NULL)[0m
+  [4;36;1mTreasure Create (0.1ms)[0m   [0;1mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 8)[0m
+  [4;35;1mGoldPiece Create (0.1ms)[0m   [0mINSERT INTO "gold_pieces" ("treasure_id") VALUES(8)[0m
+  [4;36;1mParrot Create (0.1ms)[0m   [0;1mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 8)[0m
+  [4;35;1mPirate Create (0.1ms)[0m   [0mINSERT INTO "pirates" ("name", "nick_name", "parent_id", "age") VALUES('Jack Sparrow', 'Captain Jack', NULL, NULL)[0m
+  [4;36;1mMatey Create (0.1ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 9, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 9)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(9)[0m
+  [4;35;1mPirate Load (0.2ms)[0m   [0mSELECT * FROM "pirates" WHERE ("pirates"."id" = 9) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "treasures" WHERE ("treasures".pirate_id = 9) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "gold_pieces" INNER JOIN "treasures" ON "gold_pieces".treasure_id = "treasures".id WHERE (("treasures".pirate_id = 9)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "gold_pieces" INNER JOIN "treasures" ON "gold_pieces".treasure_id = "treasures".id WHERE (("treasures".pirate_id = 8)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "mateys" WHERE ("mateys".pirate_id = 9) [0m
+  [4;36;1mPirate Create (0.1ms)[0m   [0;1mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;35;1mMatey Create (0.1ms)[0m   [0mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 10, NULL)[0m
+  [4;36;1mTreasure Create (0.1ms)[0m   [0;1mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 10)[0m
+  [4;35;1mGoldPiece Create (0.1ms)[0m   [0mINSERT INTO "gold_pieces" ("treasure_id") VALUES(10)[0m
+  [4;36;1mParrot Create (0.1ms)[0m   [0;1mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 10)[0m
+  [4;35;1mPirate Create (0.1ms)[0m   [0mINSERT INTO "pirates" ("name", "nick_name", "parent_id", "age") VALUES('Jack Sparrow', 'Captain Jack', NULL, NULL)[0m
+  [4;36;1mMatey Create (0.1ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 11, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 11)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(11)[0m
+  [4;35;1mPirate Load (0.2ms)[0m   [0mSELECT * FROM "pirates" WHERE ("pirates"."id" = 11) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "treasures" WHERE ("treasures".pirate_id = 11) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "gold_pieces" INNER JOIN "treasures" ON "gold_pieces".treasure_id = "treasures".id WHERE (("treasures".pirate_id = 11)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "gold_pieces" INNER JOIN "treasures" ON "gold_pieces".treasure_id = "treasures".id WHERE (("treasures".pirate_id = 10)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "mateys" WHERE ("mateys".pirate_id = 11) [0m
+  [4;36;1mPirate Create (0.1ms)[0m   [0;1mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;35;1mMatey Create (0.1ms)[0m   [0mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 12, NULL)[0m
+  [4;36;1mTreasure Create (0.1ms)[0m   [0;1mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 12)[0m
+  [4;35;1mGoldPiece Create (0.1ms)[0m   [0mINSERT INTO "gold_pieces" ("treasure_id") VALUES(12)[0m
+  [4;36;1mParrot Create (0.1ms)[0m   [0;1mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 12)[0m
+  [4;35;1mPirate Create (0.1ms)[0m   [0mINSERT INTO "pirates" ("name", "nick_name", "parent_id", "age") VALUES('Jack Sparrow', 'Captain Jack', NULL, NULL)[0m
+  [4;36;1mParrot Create (0.1ms)[0m   [0;1mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 13)[0m
+  [4;35;1mPirate Load (0.2ms)[0m   [0mSELECT * FROM "pirates" WHERE ("pirates"."id" = 13) [0m
+  [4;36;1mParrot Load (0.1ms)[0m   [0;1mSELECT * FROM "parrots" WHERE ("parrots".pirate_id = 13) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "pirates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "parent_id" integer, "nick_name" varchar(255) DEFAULT 'no nickname', "age" varchar(255)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "parrots" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pirate_id" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "mateys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "parent_id" integer, "pirate_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "treasures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "found_at" varchar(255), "pirate_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE TABLE "gold_pieces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "treasure_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('1')[0m
+  [4;35;1mPirate Create (0.1ms)[0m   [0mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;36;1mMatey Create (0.1ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 1, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 1)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(1)[0m
+  [4;35;1mParrot Create (0.1ms)[0m   [0mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 1)[0m
+  [4;36;1mPirate Create (0.1ms)[0m   [0;1mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;35;1mMatey Create (0.1ms)[0m   [0mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 2, NULL)[0m
+  [4;36;1mTreasure Create (0.1ms)[0m   [0;1mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 2)[0m
+  [4;35;1mGoldPiece Create (0.1ms)[0m   [0mINSERT INTO "gold_pieces" ("treasure_id") VALUES(2)[0m
+  [4;36;1mParrot Create (0.1ms)[0m   [0;1mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 2)[0m
+  [4;35;1mPirate Create (0.1ms)[0m   [0mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;36;1mMatey Create (0.1ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 3, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 3)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(3)[0m
+  [4;35;1mParrot Create (0.1ms)[0m   [0mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 3)[0m
+  [4;36;1mPirate Create (0.1ms)[0m   [0;1mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;35;1mMatey Create (0.1ms)[0m   [0mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 4, NULL)[0m
+  [4;36;1mTreasure Create (0.1ms)[0m   [0;1mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 4)[0m
+  [4;35;1mGoldPiece Create (0.1ms)[0m   [0mINSERT INTO "gold_pieces" ("treasure_id") VALUES(4)[0m
+  [4;36;1mParrot Create (0.1ms)[0m   [0;1mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 4)[0m
+  [4;35;1mPirate Create (0.1ms)[0m   [0mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;36;1mMatey Create (0.1ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 5, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 5)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(5)[0m
+  [4;35;1mParrot Create (0.1ms)[0m   [0mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 5)[0m
+  [4;36;1mPirate Create (0.1ms)[0m   [0;1mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;35;1mMatey Create (0.1ms)[0m   [0mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 6, NULL)[0m
+  [4;36;1mTreasure Create (0.1ms)[0m   [0;1mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 6)[0m
+  [4;35;1mGoldPiece Create (0.1ms)[0m   [0mINSERT INTO "gold_pieces" ("treasure_id") VALUES(6)[0m
+  [4;36;1mParrot Create (0.1ms)[0m   [0;1mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 6)[0m
+  [4;35;1mPirate Create (0.1ms)[0m   [0mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;36;1mMatey Create (0.1ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 7, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 7)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(7)[0m
+  [4;35;1mParrot Create (0.1ms)[0m   [0mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 7)[0m
+  [4;36;1mPirate Create (0.1ms)[0m   [0;1mINSERT INTO "pirates" ("name", "nick_name", "parent_id", "age") VALUES('Jack Sparrow', 'Captain Jack', NULL, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 8)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(8)[0m
+  [4;35;1mPirate Load (0.2ms)[0m   [0mSELECT * FROM "pirates" WHERE ("pirates"."id" = 8) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "treasures" WHERE ("treasures".pirate_id = 8) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "gold_pieces" INNER JOIN "treasures" ON "gold_pieces".treasure_id = "treasures".id WHERE (("treasures".pirate_id = 8)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "gold_pieces" INNER JOIN "treasures" ON "gold_pieces".treasure_id = "treasures".id WHERE (("treasures".pirate_id = 7)) [0m
+  [4;35;1mPirate Create (0.1ms)[0m   [0mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;36;1mMatey Create (0.1ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 9, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 9)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(9)[0m
+  [4;35;1mParrot Create (0.1ms)[0m   [0mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 9)[0m
+  [4;36;1mPirate Create (0.1ms)[0m   [0;1mINSERT INTO "pirates" ("name", "nick_name", "parent_id", "age") VALUES('Jack Sparrow', 'Captain Jack', NULL, NULL)[0m
+  [4;35;1mMatey Create (0.1ms)[0m   [0mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 10, NULL)[0m
+  [4;36;1mTreasure Create (0.1ms)[0m   [0;1mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 10)[0m
+  [4;35;1mGoldPiece Create (0.1ms)[0m   [0mINSERT INTO "gold_pieces" ("treasure_id") VALUES(10)[0m
+  [4;36;1mPirate Load (0.2ms)[0m   [0;1mSELECT * FROM "pirates" WHERE ("pirates"."id" = 10) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "treasures" WHERE ("treasures".pirate_id = 10) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "gold_pieces" INNER JOIN "treasures" ON "gold_pieces".treasure_id = "treasures".id WHERE (("treasures".pirate_id = 10)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "gold_pieces" INNER JOIN "treasures" ON "gold_pieces".treasure_id = "treasures".id WHERE (("treasures".pirate_id = 9)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "mateys" WHERE ("mateys".pirate_id = 10) [0m
+  [4;35;1mPirate Create (0.1ms)[0m   [0mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;36;1mMatey Create (0.1ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 11, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 11)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(11)[0m
+  [4;35;1mParrot Create (0.1ms)[0m   [0mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 11)[0m
+  [4;36;1mPirate Create (0.1ms)[0m   [0;1mINSERT INTO "pirates" ("name", "nick_name", "parent_id", "age") VALUES('Jack Sparrow', 'Captain Jack', NULL, NULL)[0m
+  [4;35;1mMatey Create (0.2ms)[0m   [0mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 12, NULL)[0m
+  [4;36;1mTreasure Create (0.1ms)[0m   [0;1mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 12)[0m
+  [4;35;1mGoldPiece Create (0.1ms)[0m   [0mINSERT INTO "gold_pieces" ("treasure_id") VALUES(12)[0m
+  [4;36;1mPirate Load (0.2ms)[0m   [0;1mSELECT * FROM "pirates" WHERE ("pirates"."id" = 12) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "treasures" WHERE ("treasures".pirate_id = 12) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "gold_pieces" INNER JOIN "treasures" ON "gold_pieces".treasure_id = "treasures".id WHERE (("treasures".pirate_id = 12)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "gold_pieces" INNER JOIN "treasures" ON "gold_pieces".treasure_id = "treasures".id WHERE (("treasures".pirate_id = 11)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "mateys" WHERE ("mateys".pirate_id = 12) [0m
+  [4;35;1mPirate Create (0.1ms)[0m   [0mINSERT INTO "pirates" ("name", "parent_id", "nick_name", "age") VALUES('Jack Sparrow', NULL, 'Captain Jack', NULL)[0m
+  [4;36;1mMatey Create (0.1ms)[0m   [0;1mINSERT INTO "mateys" ("name", "pirate_id", "parent_id") VALUES('John', 13, NULL)[0m
+  [4;35;1mTreasure Create (0.1ms)[0m   [0mINSERT INTO "treasures" ("found_at", "pirate_id") VALUES('Isla del Muerte', 13)[0m
+  [4;36;1mGoldPiece Create (0.1ms)[0m   [0;1mINSERT INTO "gold_pieces" ("treasure_id") VALUES(13)[0m
+  [4;35;1mParrot Create (0.1ms)[0m   [0mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 13)[0m
+  [4;36;1mPirate Create (0.1ms)[0m   [0;1mINSERT INTO "pirates" ("name", "nick_name", "parent_id", "age") VALUES('Jack Sparrow', 'Captain Jack', NULL, NULL)[0m
+  [4;35;1mParrot Create (0.1ms)[0m   [0mINSERT INTO "parrots" ("name", "pirate_id") VALUES('Polly', 14)[0m
+  [4;36;1mPirate Load (0.2ms)[0m   [0;1mSELECT * FROM "pirates" WHERE ("pirates"."id" = 14) [0m
+  [4;35;1mParrot Load (0.1ms)[0m   [0mSELECT * FROM "parrots" WHERE ("parrots".pirate_id = 14) LIMIT 1[0m
