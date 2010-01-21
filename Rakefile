@@ -29,7 +29,7 @@ begin
     gem.description = 'Deep copying for ActiveRecord objects'
     gem.email = 'eric.schwartz@centro.net'
     gem.homepage = 'http://github.com/emschwar/deep_cloning'
-    gem.authors = ['emschwar']
+    gem.authors = ['emschwar', 'DefV']
     gem.add_dependency('activerecord')
     gem.add_development_dependency('activerecord', '>=2.3.2')
     gem.add_development_dependency('riot', '>= 0.10.2')

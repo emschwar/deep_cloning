@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["emschwar"]
+  s.authors = ["emschwar", "DefV"]
   s.date = %q{2010-01-21}
   s.description = %q{Deep copying for ActiveRecord objects}
   s.email = %q{eric.schwartz@centro.net}
@@ -21,9 +21,11 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "about.yml",
-     "init.rb",
+     "deep_cloning-0.2.0.gem",
+     "deep_cloning.gemspec",
      "lib/deep_cloning.rb",
      "test/database.yml",
+     "test/debug.log",
      "test/deep_cloning.sqlite.db",
      "test/deep_cloning_test.rb",
      "test/fixtures/gold_piece.rb",
